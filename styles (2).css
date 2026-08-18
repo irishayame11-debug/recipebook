@@ -1,0 +1,883 @@
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FBF8F3;
+    color: #2A2520;
+    line-height: 1.5;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ================= SVG ICONS ================= */
+
+svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #FBF8F3;
+    border-bottom: 1px solid #D5C7A9;
+    z-index: 10;
+}
+
+header .container {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #726A5B;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #2A2520;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 500px;
+    background-image: linear-gradient(rgba(255, 230, 167, 0.65),rgba(255, 230, 167, 0.65)), url("kitchen.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: 55px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 i {
+    color: #8A5432;
+}
+
+.hero-text {
+    max-width: 500px;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #2A2520;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #8A5432;
+}
+
+
+/* ================= RECIPES ================= */
+
+.recipes {
+    padding: 70px 0;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.section-title p {
+    color: #726A5B;
+}
+
+
+/* ================= CONTROLS ================= */
+
+.controls {
+    background-color: #F3EDE2;
+    border: 1px solid #D5C7A9;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+
+/* Search */
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    border: 1px solid #D5C7A9;
+    border-radius: 30px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+
+.search svg {
+    width: 16px;
+    height: 16px;
+    color: #726A5B;
+}
+
+.search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+
+/* Select */
+
+select {
+    padding: 10px 15px;
+    border: 1px solid #D5C7A9;
+    border-radius: 30px;
+    background-color: white;
+    margin-bottom: 15px;
+}
+
+
+/* Meal buttons */
+
+.meal-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.meal-filter span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #726A5B;
+}
+
+.chip {
+    border: 1px solid #D5C7A9;
+    background-color: white;
+    color: #726A5B;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.chip:hover {
+    border-color: #A5673F;
+}
+
+.chip.active {
+    background-color: #2A2520;
+    color: white;
+}
+
+
+/* ================= RECIPE GRID ================= */
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* ================= RECIPE NAVIGATION ================= */
+
+.recipe-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.recipe-navigation button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #D5C7A9;
+    border-radius: 50%;
+    background-color: white;
+    color: #2A2520;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.recipe-navigation button:hover {
+    background-color: #2A2520;
+    color: white;
+}
+
+.recipe-navigation span {
+    font-size: 14px;
+    color: #726A5B;
+}
+
+/* ================= CARD ================= */
+
+.card {
+    background-color: white;
+    border: 1px solid #D5C7A9;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Card top */
+
+.card-top {
+    background-color: #E9E1D0;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.card-icon {
+    width: 42px;
+    height: 42px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8A5432;
+}
+
+
+/* Card body */
+
+.card-body {
+    padding: 20px;
+}
+
+.category {
+    color: #6E7452;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.card h3 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.card-info {
+    display: flex;
+    gap: 15px;
+    color: #726A5B;
+    font-size: 12px;
+}
+
+.card-info span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-info svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* View button */
+
+.card-button {
+    display: inline-block;
+    margin-top: 18px;
+    background-color: #2A2520;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.card-button:hover {
+    background-color: #8A5432;
+}
+
+
+/* ================= RECIPE OVERLAY ================= */
+
+.recipe-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    padding: 48px 20px;
+    overflow-y: auto;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.recipe-overlay.show {
+    display: flex;
+}
+
+
+/* Dark background */
+
+.overlay-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(42, 37, 32, 0.4);
+    z-index: 1;
+}
+
+
+/* ================= RECIPE DETAIL ================= */
+
+.detail {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 760px;
+    background-color: #FBF8F3;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+
+/* ================= DETAIL HEADER ================= */
+
+.detail-head {
+    background-color: #E9E1D0;
+    padding: 34px 40px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.detail-head .category {
+    color: #8A5432;
+}
+
+.detail-head h2 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    margin: 6px 0 12px;
+}
+
+
+/* ================= DETAIL META ================= */
+
+.detail-meta {
+    display: flex;
+    gap: 18px;
+    color: #726A5B;
+    font-size: 13px;
+}
+
+.detail-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.detail-meta svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* ================= CLOSE BUTTON ================= */
+
+.close-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #D5C7A9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.close-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* ================= DETAIL BODY ================= */
+
+.detail-body {
+    padding: 36px 40px 40px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 44px;
+}
+
+.detail-body h4 {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #726A5B;
+    margin: 0 0 16px;
+}
+
+
+/* ================= INGREDIENTS ================= */
+
+.detail-receipt {
+    background-color: white;
+    border: 1px solid #D5C7A9;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.detail-receipt .ingredient {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #E9E1D0;
+    font-size: 13px;
+}
+
+.detail-receipt .ingredient:last-child {
+    border-bottom: none;
+}
+
+.detail-receipt .ingredient span:first-child {
+    font-weight: 600;
+}
+
+.detail-receipt .ingredient span:last-child {
+    color: #726A5B;
+}
+
+
+/* ================= INSTRUCTIONS ================= */
+
+.steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: step;
+}
+
+.steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 34px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #D5C7A9;
+    color: #8A5432;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    border-top: 1px solid #D5C7A9;
+    text-align: center;
+    padding: 40px 0;
+}
+
+footer h2 {
+    font-family: Georgia, serif;
+    margin-bottom: 5px;
+}
+
+footer p {
+    color: #726A5B;
+    font-size: 13px;
+}
+
+
+/* ================= TABLET - 768px ================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 90%;
+    }
+
+    /* Header */
+
+    header .container {
+        height: 65px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    /* Hero */
+
+    .hero {
+        min-height: 450px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-text {
+        max-width: 450px;
+    }
+
+    /* Recipe Grid */
+
+    .recipe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Controls */
+
+    .controls {
+        padding: 18px;
+    }
+
+    .meal-filter {
+        gap: 7px;
+    }
+
+    .chip {
+        padding: 7px 12px;
+        font-size: 13px;
+    }
+
+    /* Recipe Detail */
+
+    .detail {
+        max-width: 90%;
+    }
+
+    .detail-head {
+        padding: 30px;
+    }
+
+    .detail-body {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px;
+    }
+}
+
+
+/* ================= PHONE - 480px ================= */
+
+@media (max-width: 480px) {
+
+    /* General */
+
+    .container {
+        width: 92%;
+    }
+
+
+    /* ================= HEADER ================= */
+
+    header .container {
+        height: auto;
+        min-height: 65px;
+        padding: 15px 0;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+    /* ================= HERO ================= */
+
+    .hero {
+        min-height: 420px;
+    }
+
+    .hero .container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        margin-bottom: 15px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+        line-height: 1.1;
+        margin-bottom: 18px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+        max-width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+
+    /* ================= RECIPES ================= */
+
+    .recipes {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        margin-bottom: 25px;
+    }
+
+    .section-title h2 {
+        font-size: 26px;
+    }
+
+    .section-title p {
+        font-size: 13px;
+    }
+
+
+    /* ================= CONTROLS ================= */
+
+    .controls {
+        padding: 15px;
+    }
+
+    .search {
+        padding: 10px 13px;
+    }
+
+    .search input {
+        font-size: 13px;
+    }
+
+    select {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .meal-filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+    }
+
+    .meal-filter span {
+        width: 100%;
+        margin-bottom: 2px;
+    }
+
+    .chip {
+        padding: 7px 11px;
+        font-size: 12px;
+    }
+
+
+    /* ================= RECIPE GRID ================= */
+
+    .recipe-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card-body {
+        padding: 18px;
+    }
+
+    .card h3 {
+        font-size: 19px;
+    }
+
+
+    /* ================= NAVIGATION ================= */
+
+    .recipe-navigation {
+        margin-top: 25px;
+        gap: 12px;
+    }
+
+    .recipe-navigation button {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+
+    /* ================= RECIPE OVERLAY ================= */
+
+    .recipe-overlay {
+        padding: 15px 10px;
+    }
+
+    .detail {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+
+
+    /* ================= DETAIL HEADER ================= */
+
+    .detail-head {
+        padding: 28px 20px;
+        padding-right: 55px;
+    }
+
+    .detail-head h2 {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .detail-meta {
+        flex-wrap: wrap;
+        gap: 10px 15px;
+        font-size: 12px;
+    }
+
+    .close-btn {
+        top: 14px;
+        right: 14px;
+        width: 30px;
+        height: 30px;
+    }
+
+
+    /* ================= DETAIL BODY ================= */
+
+    .detail-body {
+        padding: 25px 20px 30px;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .detail-receipt {
+        padding: 15px;
+    }
+
+    .detail-receipt .ingredient {
+        gap: 10px;
+        padding: 9px 0;
+        font-size: 12px;
+    }
+
+    .steps li {
+        padding-left: 32px;
+        font-size: 13px;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    footer {
+        padding: 30px 0;
+    }
+
+    footer h2 {
+        font-size: 22px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
