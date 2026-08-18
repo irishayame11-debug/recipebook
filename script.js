@@ -414,11 +414,10 @@ document
 // ================= SEARCH =================
 
 document
-    .getElementById("ingredientSelect")
-    .addEventListener("change", function() {
+    .getElementById("searchInput")
+    .addEventListener("input", function() {
 
-        selectedIngredient =
-            this.value;
+        searchText = this.value.toLowerCase().trim();
 
         currentPage = 1;
 
@@ -433,13 +432,13 @@ document
     .getElementById("ingredientSelect")
     .addEventListener("change", function() {
 
-        selectedIngredient =
-            this.value;
+        selectedIngredient = this.value;
+
+        currentPage = 1;
 
         filterRecipes();
 
     });
-
 
 // ================= MEAL FILTER =================
 
