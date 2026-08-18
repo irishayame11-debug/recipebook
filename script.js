@@ -329,7 +329,7 @@ function filterRecipes() {
             recipe.meal === selectedMeal;
 
 
-        // Check ingredient
+        // Check main ingredient
         const ingredientMatch =
             selectedIngredient === "All" ||
             recipe.ingredient === selectedIngredient;
@@ -337,9 +337,25 @@ function filterRecipes() {
 
         // Check search
         const searchMatch =
+            searchText === "" ||
+
             recipe.name
                 .toLowerCase()
-                .includes(searchText);
+                .includes(searchText) ||
+
+            recipe.meal
+                .toLowerCase()
+                .includes(searchText) ||
+
+            recipe.ingredient
+                .toLowerCase()
+                .includes(searchText) ||
+
+            recipe.ingredients.some(item =>
+                item[0]
+                    .toLowerCase()
+                    .includes(searchText)
+            );
 
 
         return (
