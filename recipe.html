@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time to Dine</title>
+    <link rel="stylesheet" href="recipe.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ================= SVG ICONS ================= -->
+    <svg style="display: none;">
+        <!-- Egg -->
+        <symbol id="egg" viewBox="0 0 24 24">
+            <path d="M12 21c4.4 0 7-3.6 7-8 0-5-3.5-10-7-10S5 8 5 13c0 4.4 2.6 8 7 8Z" />
+        </symbol>
+
+        <!-- Leaf -->
+        <symbol id="leaf" viewBox="0 0 24 24">
+            <path d="M20 4C10 4 4 10 4 18c8 0 14-6 14-14Z" />
+            <path d="M4 20 12 12" />
+        </symbol>
+
+        <!-- Flame -->
+        <symbol id="flame" viewBox="0 0 24 24">
+            <path d="M12 22c4 0 6.5-2.6 6.5-6.4
+            -0-3-2-4.8-3-7-1 1.6-1.8 2-2 1
+            -.3-1.4 0-3.3-1-5.6C9.5 6.5
+            7 9 7 13c0 1 .3 2 .8 2.8
+            -1-.4-1.8-1.2-2.3-2.3
+            C5 15.2 5 17 5 15.6
+            5 19.4 8 22 12 22Z" />
+        </symbol>
+
+        <!-- Bowl -->
+        <symbol id="bowl" viewBox="0 0 24 24">
+            <path d="M3 11h18a9 8 0 0 1-18 0Z" />
+            <path d="M7 11c0-3 2-5 5-5s5 2 5 5" />
+        </symbol>
+
+        <!-- Cookie -->
+        <symbol id="cookie" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <circle cx="9" cy="10" r="1" />
+            <circle cx="14" cy="8.5" r="1" />
+            <circle cx="15" cy="14" r="1" />
+            <circle cx="9.5" cy="15" r="1" />
+        </symbol>
+
+        <!-- Grain -->
+        <symbol id="grain" viewBox="0 0 24 24">
+            <path d="M12 21V9" />
+            <path d="M12 9c0-4-2-6-5-6 0 4 2 6 5 6Z" />
+            <path d="M12 9c0-4 2-6 5-6 0 4-2 6-5 6Z" />
+            <path d="M12 15c0-3-1.7-4.7-4-4.7 0 3 1.7 4.7 4 4.7Z" />
+            <path d="M12 15c0-3 1.7-4.7 4-4.7 0 3-1.7 4.7 4 4.7Z" />
+        </symbol>
+
+        <!-- Shrimp -->
+        <symbol id="shrimp" viewBox="0 0 24 24">
+            <path d="M4 15c0-6 4-10 9-10 4 0 7 3 7 6s-2 4-4 4" />
+            <path d="M9 9c2 0 4 1 5 3" />
+            <circle cx="6" cy="16" r="2.5" />
+        </symbol>
+
+        <!-- Clock -->
+        <symbol id="clock" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 2" />
+        </symbol>
+
+        <!-- Users -->
+        <symbol id="users" viewBox="0 0 24 24">
+            <circle cx="9" cy="8" r="3" />
+            <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+            <circle cx="17" cy="9" r="2.4" />
+            <path d="M15.5 14.2c2.5.4 4.5 2.6 4.5 5.8" />
+        </symbol>
+
+        <!-- Search -->
+        <symbol id="search" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m21 21-4.3-4.3" />
+        </symbol>
+
+        <!-- Close -->
+        <symbol id="close" viewBox="0 0 24 24">
+            <path d="M6 6l12 12" />
+            <path d="M18 6 6 18" />
+        </symbol>
+    </svg>
+
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="container">
+            <a href="#" class="logo">
+                TIME TO DINE
+            </a>
+
+            <nav>
+                <a href="#recipes">Recipes</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <div class="container">
+            <p class="eyebrow">
+                RECIPES FOR EVERYONE
+            </p>
+
+            <h1>
+                Cook well.
+                <i>Know</i>
+                what to cook.
+            </h1>
+
+            <p class="hero-text">
+                Find simple recipes and discover your next favorite meal.
+            </p>
+
+            <a href="#recipes" class="button">
+                Browse Recipes
+            </a>
+        </div>
+    </section>
+
+
+    <!-- ================= RECIPES ================= -->
+    <section class="recipes" id="recipes">
+        <div class="container">
+            <div class="section-title">
+                <h2>POPULAR DISHES</h2>
+                <p>
+                    Search or filter recipes by meal and main ingredient.
+                </p>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="controls">
+
+                <!-- Search -->
+                <div class="search">
+                    <svg>
+                        <use href="#search"></use>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="Search recipes...">
+                </div>
+
+                <!-- Main Ingredient -->
+                <select id="ingredientSelect">
+                    <option value="All">
+                        Main ingredient: All
+                    </option>
+
+                    <option value="Chicken">
+                        Chicken
+                    </option>
+
+                    <option value="Beef">
+                        Beef
+                    </option>
+
+                    <option value="Pork">
+                        Pork
+                    </option>
+
+                    <option value="Fish & Seafood">
+                        Fish & Seafood
+                    </option>
+
+                    <option value="Egg">
+                        Egg
+                    </option>
+
+                    <option value="Vegetable">
+                        Vegetable
+                    </option>
+                </select>
+
+                <!-- Meal -->
+                <div class="meal-filter">
+                    <span>MEAL:</span>
+
+                    <button class="chip active" data-meal="All">
+                        All
+                    </button>
+
+                    <button class="chip" data-meal="Breakfast">
+                        Breakfast
+                    </button>
+
+                    <button class="chip" data-meal="Lunch">
+                        Lunch
+                    </button>
+
+                    <button class="chip" data-meal="Dinner">
+                        Dinner
+                    </button>
+
+                    <button class="chip" data-meal="Dessert">
+                        Dessert
+                    </button>
+
+                    <button class="chip" data-meal="Snack">
+                        Snack
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recipe Cards -->
+            <div class="recipe-grid" id="recipeGrid"></div>
+
+
+            <!-- Recipe Navigation -->
+            <div class="recipe-navigation">
+                <button id="prevRecipe">
+                    &lt;
+                </button>
+
+                <span id="recipePage">
+                    1
+                </span>
+
+                <button id="nextRecipe">
+                    &gt;
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= RECIPE OVERLAY ================= -->
+    <div class="recipe-overlay" id="recipeOverlay">
+
+        <!-- Dark Background -->
+        <div
+            class="overlay-backdrop"
+            id="overlayBackdrop">
+        </div>
+
+        <!-- Recipe Details -->
+        <div class="detail" id="detailCard">
+
+            <!-- Close Button -->
+            <button class="close-btn" id="closeOverlay">
+                <svg>
+                    <use href="#close"></use>
+                </svg>
+            </button>
+
+
+            <!-- Detail Header -->
+
+            <div class="detail-head">
+                <div>
+                    <div class="category" id="detailCategory"></div>
+                    <h2 id="detailTitle"></h2>
+
+                    <!-- Recipe Meta -->
+                    <div class="detail-meta">
+                        <span>
+                            <svg><use href="#clock"></use></svg>
+                            <span id="detailTime"></span>
+                            min
+                        </span>
+
+                        <span>
+                            <svg><use href="#users"></use></svg>
+                            Serves
+                            <span id="detailServings"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detail Body -->
+            <div class="detail-body">
+
+                <!-- Ingredients -->
+                <div>
+                    <h4>Ingredients</h4>
+                    <div class="detail-receipt" id="detailIngredients"></div>
+                </div>
+
+                <!-- Instructions -->
+                <div>
+                    <h4>Instructions</h4>
+                    <ol class="steps" id="detailSteps"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="about">
+        <h2> TIME TO DINE
+        </h2>
+        <p> Simple recipes for everyday cooking.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="recipe.js"></script>
+
+</body>
+</html>
